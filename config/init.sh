@@ -20,7 +20,7 @@ else
 	        # Configure apcupsd by editing /etc/apcupsd/apcupsd.conf
         	sed -i -e "s/#UPSNAME/UPSNAME mainups/g" /etc/apcupsd/apcupsd.conf
         	sed -i -e "s/UPSCABLE smart/UPSCABLE ether/g" /etc/apcupsd/apcupsd.conf
-        	sed -i -e "s/UPSTYPE apcsmart/UPSTYPE net/g" /etc/apcupsd/apcupsd.conf
+        	sed -i -e "s/UPSTYPE apcsmart/UPSTYPE pcnet/g" /etc/apcupsd/apcupsd.conf
         	sed -i -e s_"DEVICE /dev/ttyS0"_"DEVICE $APCADDR"_g /etc/apcupsd/apcupsd.conf
 	fi
 fi
