@@ -1,4 +1,4 @@
-# fxmartin/rpi-apcupsd-cgi
+# waynez68/ha-apc-upsd-cgi
 
 This image has been designed to allow monitoring an uninterruptible power supplies (UPS). It is built on and for the ARM achitecture (It has been built and tested on a [Raspberry PI3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)).
 
@@ -16,7 +16,7 @@ UPS monitoring page:
 
 # How to build it ?
 
-Execute the command ```docker build --tag fxmartin/rpi-apcupsd-cgi .```
+Execute the command ```docker build --tag waynez68/ha-apc-upsd-cgi .```
 
  This image is based on [resin/rpi-raspbian](https://hub.docker.com/r/resin/rpi-raspbian/). It must therefore be built on an ARM platform.
 
@@ -38,7 +38,7 @@ sudo docker run \
     --name=apcupsd-cgi \
     --hostname=apcupsd-cgi \
     --env "CABLE=USB" \
-    fxmartin/rpi-apcupsd-cgi
+    waynez68/ha-apc-upsd-cgi
 ```
 The --privileged and --volume are mandatory to give access to the host USB port.
 
@@ -53,7 +53,7 @@ sudo docker run \
     --hostname=apcupsd-cgi \
     --env "CABLE=NET" \
     --env "APCADDR=192.168.50.1:3551" \
-    fxmartin/rpi-apcupsd-cgi
+    waynez68/ha-apc-upsd-cgi
 ```
 
 # How to debug it ?
@@ -72,7 +72,7 @@ Starting Apache
 
 Apache logs (access and error logs) aren't automatically streamed to stdout and stderr. To review the logs, you can launch the following command:
 
-```docker exec -i fxmartin/rpi-apcupsd-cgi tail -f /var/log/apache2/access.log -f /var/log/apache2/error.log```
+```docker exec -i waynez68/ha-apc-upsd-cgi tail -f /var/log/apache2/access.log -f /var/log/apache2/error.log```
 
 Finally to enter the container while it is running and execute some apcupsd checks, enter the following command: ```docker exec -i -t apcupsd-cgi /bin/bash```.
 
