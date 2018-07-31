@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian
 
-MAINTAINER F.-X. Martin mail@fxmartin.me
+MAINTAINER wjs waynez1968@gmail.com
 
 # Install Apache, apcupsd et apcupsd-cgi
 RUN apt-get update && apt-get install -y apache2 apcupsd apcupsd-cgi && apt-get clean && rm -rf /var/lib/apt/lists/*
