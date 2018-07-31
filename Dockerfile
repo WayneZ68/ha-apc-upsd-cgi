@@ -3,7 +3,10 @@ FROM resin/rpi-raspbian
 MAINTAINER wjs waynez1968@gmail.com
 
 # Install Apache, apcupsd et apcupsd-cgi
-RUN apt-get update && apt-get install -y apache2 apcupsd apcupsd-cgi && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y apache2 apcupsd apcupsd-cgi
+RUN apt-get clean 
+RUN rm -rf /var/lib/apt/lists/*
 
 # Define ServerName for Apache
 RUN echo 'ServerName apcupsd' >> /etc/apache2/apache2.conf
